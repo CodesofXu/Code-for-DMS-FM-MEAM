@@ -1,0 +1,42 @@
+# config_cluster.yaml
+data:
+  csv_dir: " "
+  file_pattern: "*.csv"        # File matching pattern
+  feature_column: "feature"
+  output_root: " "
+
+preprocessing:
+  standard_scaler:
+  pca:
+    enabled:
+    n_components:
+  umap:
+    enabled:
+    n_components:
+    n_neighbors:
+    min_dist:
+
+clustering:
+  algorithm: "kmeans"          # Options: kmeans/hdbscan
+  kmeans:
+    n_clusters:               # Preset cluster count
+    max_iter:               # Maximum iterations
+    n_init:                  # Number of random initializations
+  max_clusters:               # max_cluster
+  hdbscan:
+    min_cluster_size:        # Minimum cluster sample size
+    min_samples:              # Core point neighborhood sample size
+    cluster_selection_epsilon:   # Cluster merge threshold
+
+evaluation:
+  silhouette:               # Calculate silhouette coefficient
+  calinski_harabasz:        # Calculate CH index
+  davies_bouldin:          # Calculate DB index
+  silhouette_threshold:       # silhouette threshold
+
+visualization:
+  umap_visualization:
+  plot_dpi:
+  plot_format: "png"
+  cluster_summary:           # Generate cluster statistical report
+

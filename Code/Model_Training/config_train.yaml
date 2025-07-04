@@ -1,0 +1,39 @@
+#  config_train.yaml
+
+data:
+  train_dir:
+  val_dir:
+  test_dir:
+
+logging:
+  logger_dir: "logs"
+  logger_name: " "  # Experiment name
+
+model:
+  architecture: "mobilenet_v3_small"  # Supported: resnet18, vgg16, densenet121, regnet_y_400mf,
+                                      #            efficientnet_v2_s, mobilenet_v3_small, yolov11s-cls,
+                                      #            visformer_tiny, efficientnet_b0
+  learning_rate: 0.001
+
+scheduler:
+  type: "CosineAnnealingLR"    # Options: StepLR, ExponentialLR, ReduceLROnPlateau, CosineAnnealingLR
+
+  factor: 0.1                  # Learning rate decay factor
+  patience_s: 5                # Epochs to wait before reducing LR without improvement
+  min_lr: 0.00001              # Minimum learning rate
+  mode: "min"                  # "min" or "max" depending on monitored metric
+
+  # CosineAnnealingLR parameters
+  T_max: 20                    # Maximum number of iterations (half-period of cosine cycle)
+  eta_min: 0.00001             # Minimum learning rate in cosine annealing
+
+early_stopping:
+  patience_e: 10  # Higher than scheduler's 5, giving the model more opportunities to improve
+
+training:
+  batch_size: 16
+  max_epochs: 20
+  num_workers: 4  # Number of data loading workers
+
+dataset:
+  raw: True  # Enable label normalization
