@@ -1,5 +1,5 @@
 # In-situ real-time defect detection, mitigation and self-supervised adaptation based on visual foundation model for material extrusion additive manufacturing
-This is code for paper "_In-situ real-time defect detection, mitigation and self-supervised adaptation based on visual fundamental model for material extrusion additive manufacturing_"
+This is code for paper "_In-situ real-time defect detection, mitigation and self-supervised adaptation based on visual foundation model for material extrusion additive manufacturing_"
 
 [![Paper](https://img.shields.io/badge/Paper-SCI-orange)](论文链接)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
